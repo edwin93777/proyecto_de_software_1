@@ -1,9 +1,9 @@
 name: validacion pagina
 on: 
     push: 
-        branches: [main]
+        branches: [main, prueba]
     pull_request:
-        branches: [main]
+        branches: [main, prueba]
 
 jobs:
     validacion:
