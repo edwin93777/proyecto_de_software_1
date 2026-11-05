@@ -1,0 +1,25 @@
+name: validacion pagina
+on: 
+    push: 
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    validacion:
+        name: crear una maquina virtual
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: checkout repositorio
+              uses: actions/checkout@v4
+            
+            - name: instalar node
+              uses: actions/setup-node@v4
+              with:
+                node-version: 24
+            - name: validar codigo html
+              run: |
+                echo "inicio"
+                npx html-validate "**/*.html"
+                echo "fin"
